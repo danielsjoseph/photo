@@ -1,0 +1,207 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url('./bgg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    height: 10vh;
+    align-items: center;
+    /* background-color: black; */
+    color: white;
+}
+.navbar div{
+    cursor: pointer;
+}
+.firstBody{
+    display: flex;
+    color: white;
+}
+.firstBody .picArea{
+    width: 50%;
+    height: 90vh;
+    /* background-color: green; */
+}
+.firstBody .txtArea{
+    width: 50%;
+    position: relative;
+    height: 90vh;
+    /* background-color: yellow; */
+}
+.compName{
+    position: absolute;
+    top: clamp(250px,40vh,300px);
+    left: 40vh;
+}
+#scroll{
+    /* background-color: red; */
+    width: 500px;
+    height: 500px;
+    position: relative; 
+    left: 20vh;
+    top: 10vh;  
+    transition: 1s; 
+}
+#scroll > img{
+    height: 500px;
+    width: 500px;
+}
+#revolver{
+    position: absolute;
+    top: 50px;
+    right: -280px;
+    height: 400px;
+    width: 400px;
+    background-image: url(./revolver.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: revolve 12s infinite;
+}
+#revolver img{
+    height: 121px;
+    width: 121px;
+    border-radius: 50%;
+    position: absolute;
+    border: 0;
+}
+#revolver img:nth-child(1){
+    top: 135px;
+    left: 20px;
+    animation: rewind 12s infinite;
+}
+#revolver img:nth-child(2){
+    top: 246px;
+    left: 82px;
+    animation: rewind 12s infinite;
+}
+#revolver img:nth-child(3){
+    top: 244px;
+    left: 204px;height: 127px;width: 127px;
+    animation: rewind 12s infinite;
+}
+#revolver img:nth-child(4){
+    top: 133px;
+    left: 270px;
+    height: 127px;
+    width: 127px;
+    animation: rewind 12s infinite;
+}
+#revolver img:nth-child(5){
+    left: 205px;
+    top: 25px;
+    animation: rewind 12s infinite;
+}
+#revolver img:nth-child(6){
+    top: 25px;
+    left: 80px;
+    animation: rewind 12s infinite;
+}
+.ndBody{
+    height: 100vh;
+    color: white;
+}
+@keyframes revolve{
+    0%{
+        transform: rotate(0deg);
+    }
+    16%{
+        transform: rotate(60deg);
+    }
+    33%{
+        transform: rotate(120deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    66%{
+        transform: rotate(240deg);
+    }
+    83%{
+        transform: rotate(300deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes rewind{
+    0%{
+        transform: rotate(0deg);
+    }
+    16%{
+        transform: rotate(-60deg);
+    }
+    33%{
+        transform: rotate(-120deg);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+    66%{
+        transform: rotate(-240deg);
+    }
+    83%{
+        transform: rotate(-300deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+
+@media screen and (max-width:768px){
+    .firstBody{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .compName{
+        top: 0;
+        left: 50vw;
+        transform: translate(-50%,0);
+    }
+    #scroll{
+        left: 0;
+        width: 400px;
+        height: 400px;
+    }
+    #scroll > img{
+        width: 400px;
+        height: 400px;
+    }
+    
+    .firstBody .txtArea{
+        height: 0;
+    }
+    #revolver{
+        top: 0;
+    }
+    @keyframes revolve{
+        0%{
+            transform: rotate(0deg) scale(0.8,0.8);
+        }
+        16%{
+            transform: rotate(60deg) scale(0.8,0.8);
+        }
+        33%{
+            transform: rotate(120deg) scale(0.8,0.8);
+        }
+        50%{
+            transform: rotate(180deg) scale(0.8,0.8);
+        }
+        66%{
+            transform: rotate(240deg) scale(0.8,0.8);
+        }
+        83%{
+            transform: rotate(300deg)scale(0.8,0.8);
+        }
+        100%{
+            transform: rotate(360deg)scale(0.8,0.8);
+        }
+    }
+}
